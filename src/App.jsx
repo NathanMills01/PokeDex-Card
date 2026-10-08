@@ -18,22 +18,36 @@ function PokemonCard() {
  
 
         console.log(result.types[0].type.name);
-        if(result.types[0].type.name == "grass"){
-          document.body.style.backgroundColor = "green";
 
-        }
+          const ColorType = 
+          {
+            fire : "red",
+            water : "blue",
+            grass : "green",
+            normal : "white",
+            poison : "purple",
+            psychic : "magenta",
+            ice : "aquamarine",
+            electric : "yellow",
+            dark : "black",
+            fighting : "orange",
+            ground : "brown",
+            fairy : "pink",
+            steel: "silver",
+            ghost: "violet",
+            dragon : "gold",
+            bug: "lightgreen",
+            rock : "gray",
+            flying : "#EAF6F2" 
 
-        else if(result.types[0].type.name == "fire"){
-          document.body.style.backgroundColor = "red";
-        }
+          };
 
-        else if(result.types[0].type.name == "water"){
-          document.body.style.backgroundColor = "blue";
-        }
+          const Type1 = result.types[0].type.name;
 
-        else{
-          document.body.style.backgroundColor = "white";
-        }
+          document.body.style.background = ColorType[Type1];
+
+
+
         setLoading(false);
       } catch (error) {
         console.error('Error fetching data:', error);
@@ -52,6 +66,7 @@ function PokemonCard() {
 
 
   return (
+    <div>
 
     <div style={{
       display: 'flex', flexWrap: 'wrap', gap: '20px', justifyContent: 'center',
@@ -91,6 +106,9 @@ function PokemonCard() {
         </div>
 
       </div>
+    </div>
+
+
     </div>
   
 
